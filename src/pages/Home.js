@@ -110,7 +110,7 @@ function PricingContent() {
             <Link
               variant="button"
               color="text.primary"
-              href="#"
+              href="/createclient"
               sx={{ my: 1, mx: 1.5 }}
             >
               Create Client
@@ -118,16 +118,16 @@ function PricingContent() {
             <Link
               variant="button"
               color="text.primary"
-              href="#"
+              href="/contact"
               sx={{ my: 1, mx: 1.5 }}
             >
               Contact Us
             </Link>
           </nav>
-          <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
+          <Button href="register" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
             SignUp
           </Button>
-          <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
+          <Button href="login" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
             Login
           </Button>
         </Toolbar>
