@@ -10,7 +10,8 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import GroupAddOutlinedIcon from '@mui/icons-material/GroupAddOutlined';
 
-import React, { useState } from "react";
+
+import React, { useState} from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from '../firebase'
 
@@ -33,7 +34,6 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Register() {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
