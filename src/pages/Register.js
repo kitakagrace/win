@@ -8,6 +8,11 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import GroupAddOutlinedIcon from '@mui/icons-material/GroupAddOutlined';
 
+import React, { useState } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import {auth} from '../firebase'
+
+
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -27,15 +32,20 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Register() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
+  
+  const register = e => {
+    e.preventDefault()
+      // Create a new user with email and password using firebase
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((res) => {
+            console.log(res.user)
+          })
+        .catch(console.error())
+
+  }
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
@@ -70,7 +80,7 @@ export default function Register() {
             <Typography component="h1" variant="h5">
               Register
             </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <Box component="form" noValidate  sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
                 required
@@ -80,6 +90,8 @@ export default function Register() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <TextField
                 margin="normal"
@@ -90,12 +102,15 @@ export default function Register() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                value={password}
+          onChange={(e) => setPassword(e.target.value)}
               />
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                onClick={register}
               >
                 Register
               </Button>
