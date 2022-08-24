@@ -24,7 +24,7 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Kitaka Systems
           </Typography>
-          <Button color="inherit" href = '/createclient'>Create Client</Button>
+          <Button color="inherit" href = '/createmember'>Create Member</Button>
           <Button color="inherit" href = '/login'>Login</Button>
           <Button color="inherit" href = '/register'>Sign up</Button>
         </Toolbar>

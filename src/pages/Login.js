@@ -23,7 +23,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Kitaka Systems
+      Sunesis
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -46,6 +46,7 @@ export default function Register() {
         // Signed in 
         const user = userCredential.user;
         console.log(user);
+        
         // ...
       })
       .catch((error) => {

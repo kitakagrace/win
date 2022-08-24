@@ -3,7 +3,8 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import CreateClient from './pages/CreateClient';
+import CreateMember from './pages/CreateMember';
+import Members from './pages/members';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       <Route path = "contact" element = {<Contact />} />
       <Route path = "login" element = {<Login />} />
       <Route path = "register" element = {<Register />} />
-      <Route path='createclient' element = { <CreateClient />} />
+      <Route path='createmember' element = { <CreateMember />} />
+      <Route path='members' element = { <Members />} />
     </Routes>
     </BrowserRouter>
   );

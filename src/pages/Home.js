@@ -6,7 +6,7 @@ export default function Types() {
     <div>
       <Menu/>
       <Typography variant="h3" gutterBottom component="div" align='center'>
-        Loan Management in seconds!
+        Financial Management in seconds!
       </Typography>
    </div>
   );

@@ -13,6 +13,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import {auth} from '../firebase'
 
 
+
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -21,7 +22,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Kitaka Systems
+        Sunesis
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -35,13 +36,15 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  
   const register = e => {
+
     e.preventDefault()
       // Create a new user with email and password using firebase
         createUserWithEmailAndPassword(auth, email, password)
         .then((res) => {
             console.log(res.user)
+            console.log(res.user.uid)
+            
           })
         .catch(console.error())
 
