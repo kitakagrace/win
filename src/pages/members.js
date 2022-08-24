@@ -3,7 +3,7 @@ import {db} from '../firebase'
 import { onValue, ref } from 'firebase/database';
 
 export default function Members()  {
-  const [members, setMembers] = useState([]);
+ // const [members, setMembers] = useState([]);
 useEffect(() =>{
 
 onValue(ref(db), snapshot => {
@@ -13,7 +13,7 @@ onValue(ref(db), snapshot => {
     data.push(memberList);
   });
   console.log(data);
-  setMembers(data);
+  // setMembers(data);
 });
 },[])
 
